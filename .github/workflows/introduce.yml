@@ -13,7 +13,6 @@ jobs:
       
       - name: get my name from secrets
         run: |
-          echo  Hello, my name is ${secrets.name}.
           echo  Hello, my name is ${{secrets.name}}.
 
       - name: the end
