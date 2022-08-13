@@ -1,0 +1,21 @@
+name: introduce me
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: get my name from secrets
+        run: |
+          echo  Hello, my name is ${secrets.name}.
+          echo  Hello, my name is ${{secrets.name}}.
+
+      - name: the end
+        run: |
+          echo makabaka, the end.
