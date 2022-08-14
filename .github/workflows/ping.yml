@@ -1,0 +1,24 @@
+name: ping sth
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: connect baidu.com
+        run: |
+          echo ping baidu.com
+          ping baidu.com
+          echo curl baidu.com
+          curl https://baidu.com
+          
+      - name: connect 简书
+        run: |
+          echo ping jianshu.com
+          ping jianshu.com
+          echo curl jianshu.com
+          curl https://www.jianshu.com/p/f62e50892684
+      
