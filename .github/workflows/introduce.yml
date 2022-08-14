@@ -21,6 +21,11 @@ jobs:
           echo the new settings.xml below
           cat ~/settings.xml
 
+      - uses: actions/upload-artifact@v3
+        with:
+          name: download settings.xml
+          path: ~/settings.xml
+
       - name: the end
         run: |
           echo makabaka, the end.
