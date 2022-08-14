@@ -17,7 +17,7 @@ jobs:
       
       - name: rewrite settings.xml...
         run: |
-          cat ./.github/workflows/settings.xml | sed s/LETS_GO_AND_FUCK_IT_UP/${{secrets.name}}/g >> ~/settings.xml
+          cat ./.github/workflows/settings.xml | sed 's/LETS_GO_AND_FUCK_IT_UP/${{secrets.name}}/g' >> ~/settings.xml
           echo the new settings.xml below
           cat ~/settings.xml
 
