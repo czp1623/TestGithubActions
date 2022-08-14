@@ -23,8 +23,15 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
-          name: download settings.xml
+          name: my-artifact
           path: ~/settings.xml
+          
+      - uses: actions/download-artifact@v3
+        with:
+          name: my-artifact
+    
+      - name: Display structure of downloaded files
+        run: ls -R
 
       - name: the end
         run: |
