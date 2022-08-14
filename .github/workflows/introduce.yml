@@ -14,6 +14,12 @@ jobs:
       - name: get my name from secrets
         run: |
           echo  Hello, my name is ${{secrets.name}}.
+      
+      - name: rewrite settings.xml...
+        run: |
+          cat ./.github/workflows/settings.xml | sed s/LETS_GO_AND_FUCK_IT_UP/${{secrets.name}}/g >> ~/settings.xml
+          echo the new settings.xml below
+          cat ~/settings.xml
 
       - name: the end
         run: |
