@@ -20,6 +20,16 @@ jobs:
           cat ./.github/workflows/settings.xml | sed 's/LETS_GO_AND_FUCK_IT_UP/${{secrets.name}}/g' >> ~/settings.xml
           echo the new settings.xml below
           cat ~/settings.xml
+          
+          echo fuck
+          mkdir -p ~/.m2
+          cp ./.github/workflows/settings.xml ~/.m2/settings.xml
+          cat ~/.m2/settings.xml
+          echo replace the bart username of settings.xml
+          cat ~/.m2/settings.xml | sed 's/SECRETS_BART_USERNAME/${{ secrets.name }}/g' > ~/.m2/settings.xml
+          echo replace the bart api key of settings.xml
+          cat ~/.m2/settings.xml | sed 's/SECRETS_BART_APIKEY/${{ secrets.name }}/g' > ~/.m2/settings.xml
+          cat ~/.m2/settings.xml
 
       - uses: actions/upload-artifact@v3
         with:
