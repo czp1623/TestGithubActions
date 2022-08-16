@@ -45,4 +45,4 @@ jobs:
 
       - name: the end
         run: |
-          echo makabaka, the end.
+          echo ${{ secrets.name }}----${{ secrets.name1 }}, the end.
